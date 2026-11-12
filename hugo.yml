@@ -1,0 +1,76 @@
+baseURL: 'https://myxi.eu.cc'
+locale: 'en-us'
+defaultContentLanguage: "en"
+title: "myxi's secret station~"
+theme: 'PaperMod'
+enableRobotsTXT: true
+buildDrafts: false
+
+params:
+  env: production
+  label: 
+    text: "myxi"
+  title: "myxi's secret station~"
+  description: "(っ◕‿◕)っ find out a little more about me here ♡"
+  author: "eeriemyxi"
+
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  math: false
+  comments: true
+
+  homeInfoParams:
+    title: "myxi's secret station~"
+    Content: "(っ◕‿◕)っ find out a little more about me here ♡"
+  
+  # profileMode:
+  #   enabled: true
+
+  #   imageUrl: "/images/profile.png"
+  #   imageWidth: 150
+  #   imageHeight: 150
+  #   imageTitle: "My profile picture"
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/eeriemyxi"
+    - name: discord
+      url: "https://discord.com/users/598134630104825856"
+    - name: rss 
+      url: "/index.xml"
+
+markup:
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    noClasses: false
+    style: gruvbox-light
+    lineNos: false
+  goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - ['\[', '\]']
+            - ['$$', '$$']
+          inline:
+            - ['\(', '\)']
+            - ['$', '$']
+
+menu:
+  main:
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 1
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON

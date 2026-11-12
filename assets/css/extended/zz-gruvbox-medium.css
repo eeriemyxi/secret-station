@@ -1,0 +1,777 @@
+/* ==========================================================
+   GRUVBOX MEDIUM — PAPER MOD
+   A warm, earthy, carefully balanced color system.
+
+   Dark:   Gruvbox Medium
+   Light:  Gruvbox Medium Light
+
+   Typography is intentionally untouched.
+   ========================================================== */
+
+
+/* ==========================================================
+   1. GRUVBOX LIGHT PALETTE
+   ========================================================== */
+
+:root {
+
+    color-scheme: light;
+
+    /* Backgrounds */
+    --gb-bg0: #fbf1c7;
+    --gb-bg1: #f2e5bc;
+    --gb-bg2: #ebdbb2;
+    --gb-bg3: #d5c4a1;
+    --gb-bg4: #bdae93;
+
+    /* Foregrounds */
+    --gb-fg0: #282828;
+    --gb-fg1: #3c3836;
+    --gb-gray: #7c6f64;
+
+    /* Accent colors */
+    --gb-red: #cc241d;
+    --gb-orange: #d65d0e;
+    --gb-yellow: #d79921;
+    --gb-green: #98971a;
+    --gb-aqua: #689d6a;
+    --gb-blue: #458588;
+    --gb-purple: #b16286;
+
+    /* PaperMod variables */
+    --theme: var(--gb-bg0);
+    --entry: var(--gb-bg1);
+    --primary: var(--gb-fg1);
+    --secondary: #665c54;
+    --tertiary: var(--gb-bg3);
+    --content: var(--gb-fg1);
+
+    --code-bg: var(--gb-bg2);
+    --hljs-bg: var(--gb-bg1);
+    --border: var(--gb-bg3);
+}
+
+
+/* ==========================================================
+   2. GRUVBOX MEDIUM DARK PALETTE
+   ========================================================== */
+
+:root[data-theme="dark"],
+:root.dark {
+
+    color-scheme: dark;
+
+    /* Backgrounds */
+    --gb-bg0: #282828;
+    --gb-bg1: #32302f;
+    --gb-bg2: #3c3836;
+    --gb-bg3: #504945;
+    --gb-bg4: #665c54;
+
+    /* Foregrounds */
+    --gb-fg0: #ebdbb2;
+    --gb-fg1: #d5c4a1;
+    --gb-gray: #a89984;
+
+    /* Accent colors */
+    --gb-red: #fb4934;
+    --gb-orange: #fe8019;
+    --gb-yellow: #fabd2f;
+    --gb-green: #b8bb26;
+    --gb-aqua: #8ec07c;
+    --gb-blue: #83a598;
+    --gb-purple: #d3869b;
+
+    /* PaperMod variables */
+    --theme: var(--gb-bg0);
+    --entry: var(--gb-bg1);
+    --primary: var(--gb-fg0);
+    --secondary: #bdae93;
+    --tertiary: var(--gb-bg3);
+    --content: var(--gb-fg0);
+
+    --code-bg: var(--gb-bg2);
+    --hljs-bg: var(--gb-bg1);
+    --border: var(--gb-bg3);
+}
+
+
+/* ==========================================================
+   3. GLOBAL COLORS
+   ========================================================== */
+
+body {
+    background: var(--theme);
+    color: var(--primary);
+}
+
+.main {
+    color: var(--primary);
+}
+
+a {
+    color: var(--gb-aqua);
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--gb-yellow);
+}
+
+::selection {
+    background: var(--gb-orange);
+    color: var(--gb-bg0);
+}
+
+hr {
+    border-color: var(--border);
+}
+
+
+/* ==========================================================
+   4. HEADER & NAVIGATION
+   ========================================================== */
+
+.header {
+    background: var(--theme);
+}
+
+.logo a,
+.logo a:visited,
+.menu a {
+    color: var(--primary);
+}
+
+.menu a:hover,
+.logo a:hover {
+    color: var(--gb-yellow);
+}
+
+#theme-toggle {
+    color: var(--primary);
+}
+
+#theme-toggle:hover {
+    color: var(--gb-yellow);
+}
+
+
+/* ==========================================================
+   5. HOMEPAGE INTRODUCTION
+   ========================================================== */
+
+.home-info {
+    color: var(--primary);
+}
+
+.home-info .entry-content {
+    color: var(--secondary);
+}
+
+/* Social icons match the homepage title */
+.social-icons a,
+.social-icons a:visited,
+.social-icons a:hover {
+    color: var(--primary) !important;
+}
+
+/* ==========================================================
+   6. BLOG POST CARDS
+   ========================================================== */
+
+.post-entry {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.post-entry:hover,
+.post-entry:focus-within {
+    background: var(--entry);
+    border-color: var(--gb-aqua);
+}
+
+.entry-header h2 {
+    color: var(--primary);
+}
+
+.entry-content {
+    color: var(--secondary);
+}
+
+.entry-footer {
+    color: var(--gb-gray);
+}
+
+/* ==========================================================
+   7. SINGLE POST PAGES
+   ========================================================== */
+
+.post-single {
+    color: var(--primary);
+}
+
+.post-title {
+    color: var(--primary);
+}
+
+.post-content {
+    color: var(--content);
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    color: var(--primary);
+}
+
+.post-content strong {
+    color: var(--gb-fg0);
+}
+
+.post-content a {
+    color: var(--gb-aqua);
+    text-decoration-color: var(--gb-aqua);
+}
+
+.post-content a:hover {
+    color: var(--gb-yellow);
+}
+
+.post-meta {
+    color: var(--gb-gray);
+}
+
+
+/* ==========================================================
+   8. BREADCRUMBS
+   ========================================================== */
+
+.breadcrumbs {
+    color: var(--gb-gray);
+}
+
+.breadcrumbs a {
+    color: var(--gb-aqua);
+}
+
+.breadcrumbs a:hover {
+    color: var(--gb-yellow);
+}
+
+
+/* ==========================================================
+   9. TAGS
+   ========================================================== */
+
+.post-tags a {
+    background: var(--tertiary);
+    color: var(--primary);
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.post-tags a:hover {
+    background: var(--gb-green);
+    border-color: var(--gb-green);
+    color: var(--gb-bg0);
+}
+
+
+/* ==========================================================
+   10. PREVIOUS / NEXT NAVIGATION
+   ========================================================== */
+
+.paginav {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+}
+
+.paginav a {
+    color: var(--primary);
+}
+
+.paginav a:hover {
+    color: var(--gb-yellow);
+}
+
+
+/* ==========================================================
+   11. SHARE BUTTONS
+   ========================================================== */
+
+.share-buttons li a {
+    background: var(--entry);
+    color: var(--primary);
+    border-radius: 6px;
+}
+
+.share-buttons li a:hover {
+    background: var(--tertiary);
+    color: var(--gb-yellow);
+}
+
+
+/* ==========================================================
+   12. FOOTER
+   ========================================================== */
+
+.footer {
+    color: var(--gb-gray);
+}
+
+.footer a {
+    color: var(--gb-aqua);
+}
+
+.footer a:hover {
+    color: var(--gb-yellow);
+}
+
+
+/* ==========================================================
+   13. SEARCH PAGE & INPUTS
+   ========================================================== */
+
+input,
+textarea,
+select {
+    background: var(--entry);
+    color: var(--primary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+#searchbox:focus {
+    border-color: var(--gb-aqua);
+    outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--gb-gray);
+}
+
+.search-result {
+    border-color: var(--border);
+}
+
+
+/* ==========================================================
+   14. TABLE OF CONTENTS
+   ========================================================== */
+
+.toc {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.toc a {
+    color: var(--secondary);
+}
+
+.toc a:hover {
+    color: var(--gb-aqua);
+}
+
+
+/* ==========================================================
+   15. BLOCKQUOTES
+   ========================================================== */
+
+blockquote {
+    background: var(--entry);
+    border-left: 3px solid var(--gb-orange);
+    color: var(--secondary);
+    padding: 12px 18px;
+    border-radius: 0 6px 6px 0;
+}
+
+
+/* ==========================================================
+   18. SCROLLBAR
+   ========================================================== */
+
+html {
+    scrollbar-color: var(--gb-bg3) var(--theme);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--theme);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gb-bg3);
+    border-radius: 8px;
+    border: 2px solid var(--theme);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gb-bg4);
+}
+
+
+/* ==========================================================
+   19. MISCELLANEOUS ELEMENTS
+   ========================================================== */
+
+mark {
+    background: var(--gb-yellow);
+    color: var(--gb-bg0);
+}
+
+kbd {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    color: var(--primary);
+    border-radius: 4px;
+}
+
+/* Regular buttons — exclude theme toggle */
+button:not(#theme-toggle):not(.theme-toggle),
+.button:not(#theme-toggle):not(.theme-toggle) {
+    background: var(--gb-bg3);
+    color: var(--primary);
+    border: 1px solid var(--border);
+}
+
+button:not(#theme-toggle):not(.theme-toggle):hover,
+.button:not(#theme-toggle):not(.theme-toggle):hover {
+    background: var(--gb-bg4);
+    color: var(--gb-yellow);
+}
+
+/* PaperMod theme toggle */
+#theme-toggle,
+.theme-toggle {
+    background: transparent !important;
+    color: var(--primary) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#top-link {
+    background: var(--entry);
+    color: var(--primary);
+    border: 1px solid var(--border);
+}
+
+#top-link:hover {
+    color: var(--gb-yellow);
+}
+
+/* ==========================================================
+   20. GRUVBOX — REFINED HOVER STATES & BACKGROUNDS
+   ========================================================== */
+
+
+/* ----------------------------------------------------------
+   HOMEPAGE — ONE UNIFIED BACKGROUND
+
+   Use the same background as the header.
+   Keep code blocks and their backgrounds untouched.
+   ---------------------------------------------------------- */
+
+.list {
+    background: var(--theme) !important;
+}
+
+
+/* ----------------------------------------------------------
+   BLOG CARDS — SUBTLE HOVER
+   ---------------------------------------------------------- */
+
+.post-entry:hover,
+.post-entry:focus-within {
+    background: var(--entry) !important;
+    border-color: var(--border) !important;
+}
+
+
+/* ----------------------------------------------------------
+   TAGS — SOFT HOVER
+   ---------------------------------------------------------- */
+
+.post-tags a:hover {
+    background: var(--entry) !important;
+    border-color: var(--border) !important;
+    color: var(--primary) !important;
+}
+
+
+/* ----------------------------------------------------------
+   PREVIOUS / NEXT — NO HARSH COLOR BLOCK
+   ---------------------------------------------------------- */
+
+.paginav a:hover {
+    background: var(--entry) !important;
+    color: var(--primary) !important;
+}
+
+.paginav a:hover span {
+    color: var(--primary) !important;
+}
+
+
+/* ----------------------------------------------------------
+   SHARE BUTTONS — PRESERVE ORIGINAL ICON COLORS
+   ---------------------------------------------------------- */
+
+.share-buttons a,
+.share-buttons a svg {
+    color: var(--primary) !important;
+}
+
+.share-buttons a:hover,
+.share-buttons a:hover svg {
+    background: transparent !important;
+    color: var(--primary) !important;
+    opacity: 0.78;
+}
+
+
+/* ----------------------------------------------------------
+   HOMEPAGE SOCIAL ICONS — NO BRIGHT HOVER
+   ---------------------------------------------------------- */
+
+.social-icons a,
+.social-icons a svg {
+    color: var(--primary) !important;
+}
+
+.social-icons a:hover,
+.social-icons a:hover svg {
+    color: var(--primary) !important;
+    opacity: 0.78;
+}
+
+
+/* ----------------------------------------------------------
+   GENERAL LINKS — MUTED AQUA INSTEAD OF BRIGHT YELLOW
+   ---------------------------------------------------------- */
+
+a:hover {
+    color: var(--gb-aqua);
+}
+
+.post-content a:hover {
+    color: var(--gb-aqua) !important;
+}
+
+
+/* ----------------------------------------------------------
+   PAGINATION / FOOTER / NAVIGATION LINKS
+   ---------------------------------------------------------- */
+
+.footer a:hover,
+.menu a:hover,
+.logo a:hover {
+    color: var(--gb-aqua) !important;
+}
+
+
+/* ----------------------------------------------------------
+   BUTTONS — GENTLER INTERACTION
+   ---------------------------------------------------------- */
+
+button:not(#theme-toggle):not(.theme-toggle):hover,
+.button:not(#theme-toggle):not(.theme-toggle):hover {
+    background: var(--entry);
+    color: var(--primary);
+    border-color: var(--border);
+}
+
+
+/* ==========================================================
+   21. LIGHT MODE — FLAT EDITORIAL HOMEPAGE CARDS
+   Same surface as page, separated by subtle warm borders.
+   ========================================================== */
+
+:root[data-theme="light"] .list .post-entry {
+    background: var(--theme) !important;
+    border: 1px solid #dfcca0 !important;
+    box-shadow: none !important;
+}
+
+/* Gentle hover — preserve the flat surface */
+
+:root[data-theme="light"] .list .post-entry:hover,
+:root[data-theme="light"] .list .post-entry:focus-within {
+    background: var(--theme) !important;
+    border-color: #d5c4a1 !important;
+    box-shadow: none !important;
+}
+
+/* ==========================================================
+   22. SEARCH PAGE — CLEAN, UNNESTED RESULTS
+   ========================================================== */
+
+/* The results list itself should never look like a card */
+.searchResults,
+#searchResults {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* Individual search results */
+.searchResults li {
+    background: var(--entry) !important;
+    border: 1px solid transparent !important;
+    border-radius: var(--radius);
+    box-shadow: none !important;
+
+    color: var(--primary);
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Result links */
+.searchResults li a {
+    color: var(--primary);
+}
+
+/* Subtle hover — no bright aqua or yellow */
+.searchResults li:hover,
+.searchResults li:focus-within {
+    background: var(--entry) !important;
+    border-color: var(--tertiary) !important;
+    transform: translateY(-1px);
+}
+
+/* Search input — neutral focus instead of bright green */
+.searchbox input:focus,
+#searchbox:focus {
+    border-color: var(--tertiary) !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* ==========================================================
+   22. SEARCH PAGE — ORIGINAL INDIVIDUAL CARD DESIGN
+   ========================================================== */
+
+/* Search wrapper: completely transparent */
+#searchbox {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* Search input */
+#searchbox input {
+    width: 100%;
+    background: var(--entry);
+    color: var(--primary);
+    border: 2px solid var(--tertiary);
+    border-radius: var(--radius);
+    box-shadow: none;
+}
+
+#searchbox input:focus {
+    border-color: var(--secondary) !important;
+    outline: none;
+    box-shadow: none;
+}
+
+
+/* Results list: transparent, no enclosing panel */
+#searchResults,
+.searchResults {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 100%;
+    margin: var(--content-gap) 0;
+    padding: 0;
+
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+
+    list-style: none;
+}
+
+
+/* Individual result cards */
+#searchResults li,
+.searchResults li {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 15px;
+    margin: 0;
+
+    background: var(--entry) !important;
+    color: var(--primary);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    font-weight: 500;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Result links */
+#searchResults li a,
+.searchResults li a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+
+/* Subtle hover */
+#searchResults li:hover,
+#searchResults li:focus-within,
+.searchResults li:hover,
+.searchResults li:focus-within {
+    background: var(--entry) !important;
+    border-color: var(--tertiary);
+    transform: translateY(-1px);
+}
+
+
+/* Keyboard focus */
+#searchResults .focus,
+.searchResults .focus {
+    border: 1px solid var(--secondary);
+    outline: none;
+}

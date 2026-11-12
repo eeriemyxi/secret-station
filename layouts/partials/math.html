@@ -1,0 +1,38 @@
+<!-- MathJax configuration — MUST come before the MathJax script -->
+<script>
+window.MathJax = {
+    tex: {
+        // Inline mathematics
+        inlineMath: {
+            '[+]': [['$', '$']]
+        },
+
+        // Display mathematics
+        displayMath: [
+            ['$$', '$$'],
+            ['\\[', '\\]']
+        ],
+
+        // Allow escaped literal dollar signs
+        processEscapes: true
+    },
+
+    options: {
+        // Never attempt to render code as mathematics
+        skipHtmlTags: [
+            'script',
+            'noscript',
+            'style',
+            'textarea',
+            'pre',
+            'code'
+        ]
+    }
+};
+</script>
+
+<!-- MathJax 4 — TeX input, MathML and HTML output -->
+<script
+    defer
+    src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js">
+</script>

@@ -1,0 +1,156 @@
+/* ==========================================
+   SOUR GUMMY — HEADER & HOMEPAGE INTRO
+   ========================================== */
+
+.header,
+.header *,
+.home-info,
+.home-info *,
+.social-icons,
+.social-icons * {
+    font-family: "Sour Gummy", sans-serif !important;
+}
+
+
+/* ==========================================
+   LORA — HOMEPAGE BLOG CARDS
+   ========================================== */
+
+.post-entry,
+.post-entry *,
+.first-entry,
+.first-entry * {
+    font-family: "Lora", serif !important;
+}
+
+
+/* ==========================================
+   LORA — SINGLE POST TYPOGRAPHY
+   Preserve MathJax's own mathematical fonts
+   ========================================== */
+
+.post-single,
+.post-title,
+.post-content,
+.post-content p,
+.post-content li,
+.post-content blockquote,
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6,
+.post-tags,
+.paginav,
+.paginav * {
+    font-family: "Lora", serif !important;
+}
+
+
+/* ==========================================
+   SOUR GUMMY — POST PAGE PURPLE AREAS
+
+   Breadcrumbs and post metadata
+   ========================================== */
+
+.breadcrumbs,
+.breadcrumbs * {
+    font-family: "Sour Gummy", sans-serif !important;
+}
+
+/* Post date, reading time and author */
+.post-meta,
+.post-meta * {
+    font-family: "Lora", serif !important;
+}
+
+
+/* ==========================================
+   KEEP CODE BLOCKS MONOSPACE
+   ========================================== */
+
+.post-content pre,
+.post-content pre *,
+.post-content code {
+    font-family: monospace !important;
+}
+
+/* ==========================================
+   SOUR GUMMY — POST TAGS
+   Lowercase typography
+   ========================================== */
+
+.post-tags,
+.post-tags * {
+    font-family: "Sour Gummy", sans-serif !important;
+    text-transform: lowercase !important;
+}
+
+/* ==========================================
+   FIX — HOMEPAGE INTRODUCTION
+   Force Sour Gummy
+   ========================================== */
+
+.home-info,
+.home-info *,
+.first-entry.home-info,
+.first-entry.home-info * {
+    font-family: "Sour Gummy", sans-serif !important;
+}
+
+
+/* ==========================================
+   FOOTER — SOUR GUMMY
+   ========================================== */
+
+.footer,
+.footer * {
+    font-family: "Sour Gummy", sans-serif !important;
+}
+
+/* ==========================================
+   HOMEPAGE PROFILE PICTURE
+   ========================================== */
+
+.home-info-identity {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+}
+
+.home-avatar {
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+}
+
+.home-info-text {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Mobile layout */
+@media screen and (max-width: 600px) {
+    .home-info-identity {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+
+/* Align homepage social icons with introduction text */
+.home-info .entry-footer {
+    margin-left: calc(120px + 1.75rem);
+    margin-top: 0.75rem;
+}
+
+/* Reset alignment on mobile */
+@media screen and (max-width: 600px) {
+    .home-info .entry-footer {
+        margin-left: 0;
+    }
+}

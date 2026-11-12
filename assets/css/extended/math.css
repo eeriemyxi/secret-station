@@ -1,0 +1,19 @@
+/* MathJax display equations */
+.post-content mjx-container[display="true"] {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.5em 0;
+    margin: 1.2em 0;
+}
+
+/* Keep equations compatible with both color modes */
+.post-content mjx-container {
+    color: inherit;
+}
+
+/* Inline mathematics */
+.post-content mjx-container:not([display="true"]) {
+    margin: 0 0.08em;
+}

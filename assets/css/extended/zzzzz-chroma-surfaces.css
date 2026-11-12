@@ -1,0 +1,46 @@
+/* ==========================================================
+   PAPER MOD + GRUVBOX — CODE BLOCK COMPATIBILITY
+   ========================================================== */
+
+/* PaperMod uses --code-block-bg for fenced code blocks */
+
+/* Gruvbox Light */
+:root {
+    --code-block-bg: #f2e5bc;
+}
+
+/* Gruvbox Medium Dark */
+:root[data-theme="dark"] {
+    --code-block-bg: #32302f;
+}
+
+/* Base code text: essential for tokens without explicit colors */
+.post-content pre code {
+    color: var(--primary) !important;
+    background: var(--code-block-bg) !important;
+}
+
+/* Preserve Chroma's generated token colors */
+.post-content .chroma span {
+    background-color: transparent;
+}
+
+/* Code block surface */
+.post-content pre.chroma,
+.post-content .highlight pre {
+    background: var(--code-block-bg) !important;
+    border-radius: 8px;
+}
+
+/* Preserve monospace typography */
+.post-content pre,
+.post-content pre code,
+.post-content .chroma {
+    font-family: monospace !important;
+}
+
+/* Copy button */
+.copy-code {
+    background: var(--tertiary);
+    color: var(--primary);
+}
