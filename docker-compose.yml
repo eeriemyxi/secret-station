@@ -1,0 +1,67 @@
+name: secret-station
+
+services:
+  db:
+    image: postgres:18-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      # Credentials only; the `comentario` database itself is created by the
+      # migration, so existing volumes get it too.
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes:
+      # postgres:18 keeps PGDATA under /var/lib/postgresql/<major>/docker
+      - db:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres", "-d", "postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+
+  migrate:
+    image: postgres:18-alpine
+    restart: "no"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PGHOST: db
+      PGUSER: postgres
+      PGPASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      PGDATABASE: postgres
+      MIGRATIONS_DIR: /migrations
+    volumes:
+      - ./migrations:/migrations:ro
+    entrypoint: ["sh", "/migrations/migrate.sh"]
+
+  web:
+    build:
+      context: .
+    image: secret-station:local
+    restart: unless-stopped
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      db:
+        condition: service_healthy
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      # Must include the /comentario path prefix: layouts/partials/comments.html
+      # loads ${BASE_URL}/comentario.js.
+      BASE_URL: ${BASE_URL:-http://localhost:8080/comentario}
+    ports:
+      - "${HTTP_PORT:-8080}:80"
+    volumes:
+      - web-data:/data
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8080/comentario/api/user"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 10s
+
+volumes:
+  db:
+  web-data:

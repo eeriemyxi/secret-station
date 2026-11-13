@@ -1,0 +1,7 @@
+.git
+.gitmodules
+public
+resources
+themes
+.env
+*.md

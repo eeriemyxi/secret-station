@@ -1,0 +1,27 @@
+{
+	# TLS is terminated upstream (myxi.eu.cc); this container speaks plain HTTP.
+	auto_https off
+	admin off
+}
+
+:80 {
+	encode zstd gzip
+
+	# Comentario serves itself *including* the /comentario prefix (BASE_URL), so
+	# the path must reach it unstripped — /comentario/comentario.js, /comentario/api/…,
+	# /comentario/ws. `handle_path` would 404 the embed script.
+	handle /comentario/* {
+		reverse_proxy 127.0.0.1:8080
+	}
+
+	handle {
+		root * /srv
+		try_files {path} {path}/ {path}.html
+		file_server
+	}
+
+	handle_errors {
+		rewrite * /404.html
+		file_server
+	}
+}
